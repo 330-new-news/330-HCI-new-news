@@ -1,2 +1,6 @@
 # project5
-Basic instructions go here
+**Team name: New News**
+
+Team members: Andrew Thomas, Byungjin Jun, Xin Tong, Yunwen Yang
+
+Section #70
