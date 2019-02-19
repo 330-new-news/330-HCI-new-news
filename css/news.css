@@ -1,0 +1,110 @@
+
+html {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+}
+
+body {
+	margin: 0;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 0 1em;
+	background-color: #fff;
+	border-bottom: 1px solid #c8d6e5;
+	z-index: 100;
+}
+
+nav #logo {
+	padding: 0.25em 0.75em;
+	font-size: 2em;
+	font-weight: 300;
+}
+
+nav #logo span {
+	font-weight: 700;
+}
+
+#news {
+	width: calc(100% - 36px);
+	margin: 18px;
+	margin-top: 74px;
+	font-size: 0;
+}
+
+#news #filter {
+	font-size: 18px;
+	margin: 0.25em 1em;
+}
+
+#news #filter span {
+	display: inline-block;
+	margin-right: 0.5em;
+	font-size: 1.5em;
+	font-weight: 300;
+	vertical-align: middle;
+}
+
+#news #filter div {
+	display: inline-block;
+	color: #222f3e;
+	background-color: #c8d6e5;
+	padding: 0.25em 0.5em;
+	font-weight: 300;
+	vertical-align: middle;
+	opacity: 0.625;
+	cursor: pointer;
+}
+
+#news #filter div:hover {
+	opacity: 1;
+}
+
+#news #filter div.active {
+	color: #fff;
+	background-color: #2e86de;
+	opacity: 0.875;
+}
+
+#news #filter select {
+	font: inherit;
+	font-size: 0.875em;
+}
+
+#news #articles .article {
+	display: inline-block;
+	width: calc(33.333% - 2em);
+	height: 17.5em;
+	margin: 1em;
+	background-color: #222;
+	border-radius: 3px;
+	font-size: 16px;
+	opacity: 0.9;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#news #articles .article:hover {
+	opacity: 1;
+}
+
+#news #articles .article .image {
+	width: 100%;
+	height: calc(100% - 4em);
+	background-position: center;
+	background-size: cover;
+}
+
+#news #articles .article .headline {
+	color: #eee;
+	min-height: 2.7em;
+	padding: 0.25em 0.75em;
+	margin: 0;
+	font-size: 1.25em;
+	font-weight: 300;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
