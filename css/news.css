@@ -16,6 +16,7 @@ nav {
 	margin: 0 1em;
 	background-color: #fff;
 	border-bottom: 1px solid #c8d6e5;
+	z-index: 100;
 }
 
 nav #logo {
@@ -35,7 +36,46 @@ nav #logo span {
 	font-size: 0;
 }
 
-#news .article {
+#news #filter {
+	font-size: 18px;
+	margin: 0.25em 1em;
+}
+
+#news #filter span {
+	display: inline-block;
+	margin-right: 0.5em;
+	font-size: 1.5em;
+	font-weight: 300;
+	vertical-align: middle;
+}
+
+#news #filter div {
+	display: inline-block;
+	color: #222f3e;
+	background-color: #c8d6e5;
+	padding: 0.25em 0.5em;
+	font-weight: 300;
+	vertical-align: middle;
+	opacity: 0.625;
+	cursor: pointer;
+}
+
+#news #filter div:hover {
+	opacity: 1;
+}
+
+#news #filter div.active {
+	color: #fff;
+	background-color: #2e86de;
+	opacity: 0.875;
+}
+
+#news #filter select {
+	font: inherit;
+	font-size: 0.875em;
+}
+
+#news #articles .article {
 	display: inline-block;
 	width: calc(33.333% - 2em);
 	height: 17.5em;
@@ -48,18 +88,18 @@ nav #logo span {
 	overflow: hidden;
 }
 
-#news .article:hover {
+#news #articles .article:hover {
 	opacity: 1;
 }
 
-#news .article .image {
+#news #articles .article .image {
 	width: 100%;
 	height: calc(100% - 4em);
 	background-position: center;
 	background-size: cover;
 }
 
-#news .article .headline {
+#news #articles .article .headline {
 	color: #eee;
 	min-height: 2.7em;
 	padding: 0.25em 0.75em;
