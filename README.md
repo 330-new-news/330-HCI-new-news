@@ -1,4 +1,4 @@
-# project6
+# project 7
 **Team name: New News**
 
 Team members: Andrew Thomas, Byungjin Jun, Xin Tong, Yunwen Yang
