@@ -99,6 +99,13 @@ nav #logo span {
 	background-size: cover;
 }
 
+#news #articles .article .video {
+	width: 100%;
+	height: calc(100% - 4.5em);
+	background-position: center;
+	background-size: cover;
+}
+
 #news #articles .article .headline {
 	color: #eee;
 	min-height: 2.7em;
