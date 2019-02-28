@@ -8,6 +8,12 @@ body {
 	margin: 0;
 }
 
+a {
+	text-decoration: none;
+}
+a:visited { color: black;}
+a:link { color: black;}
+
 nav {
 	position: fixed;
 	top: 0;
@@ -101,9 +107,10 @@ nav #logo span {
 
 #news #articles .article .video {
 	width: 100%;
-	height: calc(100% - 4.5em);
+	height: calc(100% - 4em);
 	background-position: center;
 	background-size: cover;
+	border: 0;
 }
 
 #news #articles .article .headline {

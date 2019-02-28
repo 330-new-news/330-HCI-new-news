@@ -32,6 +32,9 @@ function render() {
 	}
 
 	var articlesHTML = filteredArticles.map(function (article) {
+		if(article.headline.length > 80) {
+			article.headline = article.headline.substring(0, 79).concat("...");
+		}
 		if(typeof article.image != "undefined") {
 			return '<div class="article"><div class="image" style="background-image: url(\'' + article.image + '\')"></div><h3 class="headline">' + article.headline + '</h3></div>'
 		} else {
