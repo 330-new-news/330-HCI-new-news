@@ -1,34 +1,4 @@
 
-html {
-	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 16px;
-}
-
-body {
-	margin: 0;
-}
-
-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	margin: 0 1em;
-	background-color: #fff;
-	border-bottom: 1px solid #c8d6e5;
-	z-index: 100;
-}
-
-nav #logo {
-	padding: 0.25em 0.75em;
-	font-size: 2em;
-	font-weight: 300;
-}
-
-nav #logo span {
-	font-weight: 700;
-}
-
 #news {
 	width: calc(100% - 36px);
 	margin: 18px;
@@ -83,6 +53,7 @@ nav #logo span {
 	background-color: #222;
 	border-radius: 3px;
 	font-size: 16px;
+	text-decoration: none;
 	opacity: 0.9;
 	cursor: pointer;
 	overflow: hidden;

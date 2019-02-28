@@ -31,8 +31,8 @@ function render() {
 		})
 	}
 
-	var articlesHTML = filteredArticles.map(function (article) {
-		return '<div class="article"><div class="image" style="background-image: url(\'' + article.image + '\')"></div><h3 class="headline">' + article.headline + '</h3></div>'
+	var articlesHTML = filteredArticles.map(function (article, index) {
+		return '<a class="article" href="/article.html#' + index + '"><div class="image" style="background-image: url(\'' + article.image + '\')"></div><h3 class="headline">' + article.headline + '</h3></a>'
 	})
 
 	articlesElement.innerHTML = articlesHTML.join('')
