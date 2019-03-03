@@ -1,4 +1,3 @@
-
 #news {
 	width: calc(100% - 36px);
 	margin: 18px;
@@ -68,6 +67,14 @@
 	height: calc(100% - 4em);
 	background-position: center;
 	background-size: cover;
+}
+
+#news #articles .article .video {
+	width: 100%;
+	height: calc(100% - 4em);
+	background-position: center;
+	background-size: cover;
+	border: 0;
 }
 
 #news #articles .article .headline {
