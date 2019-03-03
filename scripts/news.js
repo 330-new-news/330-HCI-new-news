@@ -35,8 +35,8 @@ function render() {
 		if(article.headline.length > 80) {
 			article.headline = article.headline.substring(0, 79).concat("...");
 		}
-		if(typeof article.image != "undefined") {
-			return '<div class="article"><div class="image" style="background-image: url(\'' + article.image + '\')"></div><h3 class="headline">' + article.headline + '</h3></div>'
+		if(typeof article.image == "undefined") {
+			return '<div class="article"><iframe class="video" src="' + article.video + '"></iframe><h3 class="headline">' + article.headline + '</h3></div>'
 		} else {
 			return '<a class="article" href="article.html#' + index + '"><div class="image" style="background-image: url(\'' + article.image + '\')"></div><h3 class="headline">' + article.headline + '</h3></a>'
 		}
