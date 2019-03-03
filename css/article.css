@@ -1,0 +1,185 @@
+
+#article {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	height: calc(100vh - 74px);
+	margin-top: 74px;
+}
+
+#container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+#container>div:first-child {
+	flex: 1;
+	padding: 3.5em;
+	padding-top: 0.75em;
+	overflow: auto;
+}
+
+#container>div:first-child h1 {
+	margin: 0;
+	margin-bottom: 0.25em;
+	font-size: 3em;
+}
+
+#container>div:first-child div.picture {
+	height: 33vw;
+	background-image: url('https://www.washingtonpost.com/resizer/EiYqOIhXtiRhpTURxu7SYxkRuH0=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/XNUKSLWT3AI6PGWZZIDBT3P2AU.jpg');
+	background-position: center;
+	background-size: cover;
+}
+
+#container>div:first-child p {
+	font-size: 1.25em;
+	line-height: 1.75em;
+}
+
+#container>div:first-child .highlight-0-1 {
+	background-color: rgba(29, 209, 161, 0.25);
+}
+#container>div:first-child .highlight-0-2 {
+	background-color: rgba(29, 209, 161, 0.5);
+}
+#container>div:first-child .highlight-0-3 {
+	background-color: rgba(29, 209, 161, 0.75);
+}
+#container>div:first-child .highlight-0-4 {
+	background-color: rgba(29, 209, 161, 1.0);
+}
+
+#container>div:first-child .highlight-1-1 {
+	background-color: rgba(254, 202, 87, 0.25);
+}
+#container>div:first-child .highlight-1-2 {
+	background-color: rgba(254, 202, 87, 0.5);
+}
+#container>div:first-child .highlight-1-3 {
+	background-color: rgba(254, 202, 87, 0.75);
+}
+#container>div:first-child .highlight-1-4 {
+	background-color: rgba(254, 202, 87, 1.0);
+}
+
+#container>div:first-child .highlight-2-1 {
+	background-color: rgba(255, 159, 67, 0.25);
+}
+#container>div:first-child .highlight-2-2 {
+	background-color: rgba(255, 159, 67, 0.5);
+}
+#container>div:first-child .highlight-2-3 {
+	background-color: rgba(255, 159, 67, 0.75);
+}
+#container>div:first-child .highlight-2-4 {
+	background-color: rgba(255, 159, 67, 1.0);
+}
+
+#container>div:first-child .highlight-3-1 {
+	background-color: rgba(255, 107, 107, 0.25);
+}
+#container>div:first-child .highlight-3-2 {
+	background-color: rgba(255, 107, 107, 0.5);
+}
+#container>div:first-child .highlight-3-3 {
+	background-color: rgba(255, 107, 107, 0.75);
+}
+#container>div:first-child .highlight-3-4 {
+	background-color: rgba(255, 107, 107, 1.0);
+}
+
+#container>div:last-child {
+	height: 3em;
+	padding: 0 3.5em;
+	border-top: 1px solid #c8d6e5;
+	text-align: right;
+}
+
+#container>div:last-child #feedback {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100%;
+}
+
+#container>div:last-child #feedback>div {
+	position: relative;
+	width: 3.5em;
+	height: 2.25em;
+	margin-left: 0.5em;
+	border-radius: 5px;
+	background-color: #c8d6e5;
+	background-position: center;
+	background-size: auto 85%;
+	background-repeat: no-repeat;
+	border: 2px solid #c8d6e5;
+	cursor: pointer;
+}
+
+#container>div:last-child #feedback>div.active {
+	border: 2px solid #222f3e;
+}
+
+#container>div:last-child #feedback>div:after {
+	position: absolute;
+	left: 50%;
+	top: -2em;
+	color: #fff;
+	padding: 0.25em 0.75em;
+	background-color: #222f3e;
+	border-radius: 5px;
+	opacity: 0;
+	transform: translateX(-50%);
+	z-index: 50;
+}
+
+#container>div:last-child #feedback>div:hover:after {
+	opacity: 0.875;
+}
+
+#container>div:last-child #feedback>div.feedback-0:after {
+	content: 'positive';
+}
+#container>div:last-child #feedback>div.feedback-1:after {
+	content: 'confusing';
+}
+#container>div:last-child #feedback>div.feedback-2:after {
+	content: 'misleading';
+}
+#container>div:last-child #feedback>div.feedback-3:after {
+	content: 'incorrect';
+}
+
+#container>div:last-child #feedback>div.feedback-0 {
+	background-image: url('../images/positive.svg');
+}
+#container>div:last-child #feedback>div.feedback-1 {
+	background-image: url('../images/confusing.svg');
+}
+#container>div:last-child #feedback>div.feedback-2 {
+	background-image: url('../images/misleading.svg');
+}
+#container>div:last-child #feedback>div.feedback-3 {
+	background-image: url('../images/incorrect.svg');
+}
+
+#container>div:last-child #feedback>div.feedback-0.active {
+	background-color: #1dd1a1;
+}
+#container>div:last-child #feedback>div.feedback-1.active {
+	background-color: #feca57;
+}
+#container>div:last-child #feedback>div.feedback-2.active {
+	background-color: #ff9f43;
+}
+#container>div:last-child #feedback>div.feedback-3.active {
+	background-color: #ff6b6b;
+}
+
+#sidebar {
+	width: 20em;
+	border-left: 1px solid #c8d6e5;
+}
