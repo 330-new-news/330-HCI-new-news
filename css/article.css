@@ -16,9 +16,74 @@
 
 #container>div:first-child {
 	flex: 1;
+	position: relative;
 	padding: 3.5em;
 	padding-top: 0.75em;
 	overflow: auto;
+}
+
+#container>div:first-child .leave-feedback {
+	display: none;
+	position: absolute;
+	background-color: #222;
+	border-radius: 5px;
+	overflow: hidden;
+	transform: translate(-50%, -100%);
+}
+
+#container>div:first-child .leave-feedback.active {
+	display: inline-block;
+}
+
+#container>div:first-child .leave-feedback a {
+	display: block;
+	color: #ddd;
+	padding: 0.5em 0.75em;
+	padding-right: 1.5em;
+	border-bottom: 1px solid #444;
+	line-height: 1.5em;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#container>div:first-child .leave-feedback a:hover {
+	color: #fff;
+}
+
+#container>div:first-child .leave-feedback a:last-child {
+	border-bottom: none;
+}
+
+#container>div:first-child .leave-feedback a span {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	margin-top: -0.25em;
+	margin-bottom: -0.25em;
+	margin-right: 0.375em;
+	background-color: #eee;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 50%;
+	opacity: 0.75;
+}
+
+#container>div:first-child .leave-feedback a:hover span {
+	opacity: 1;
+}
+
+#container>div:first-child .leave-feedback .leave-feedback-0 span {
+	background-image: url('../images/positive.svg');
+}
+#container>div:first-child .leave-feedback .leave-feedback-1 span {
+	background-image: url('../images/confusing.svg');
+}
+#container>div:first-child .leave-feedback .leave-feedback-2 span {
+	background-image: url('../images/misleading.svg');
+}
+#container>div:first-child .leave-feedback .leave-feedback-3 span {
+	background-image: url('../images/incorrect.svg');
 }
 
 #container>div:first-child h1 {
@@ -37,6 +102,18 @@
 #container>div:first-child p {
 	font-size: 1.25em;
 	line-height: 1.75em;
+}
+
+#container>div:first-child .selectable {
+	cursor: pointer;
+}
+
+#container>div:first-child p .selectable.active {
+	background-color: rgba(200, 214, 229, 1.0);
+}
+
+#container>div:first-child .selectable:hover {
+	background-color: rgba(200, 214, 229, 0.75);
 }
 
 #container>div:first-child .highlight-0-1 {
