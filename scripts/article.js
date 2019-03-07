@@ -1,13 +1,19 @@
 const articleHeaderElement = document.querySelector('#container .header')
 const articleBodyElement = document.querySelector('#container .body')
+const leaveFeedbackElement = document.querySelector('#container .leave-feedback')
 
 for (let i = 0; i < 4; i++) {
 	const feedbackButton = document.querySelector(`#feedback .feedback-${i}`)
+	const leaveFeedbackButton = leaveFeedbackElement.querySelector(`.leave-feedback-${i}`)
 	feedbackButton.addEventListener('click', setFeedback.bind(null, i))
+	leaveFeedbackButton.addEventListener('click', leaveFeedback.bind(null, i))
 }
 
 let index
 let feedbackFilter = -1
+
+let leaveFeedbackId = ''
+let leaveFeedbackSpanElement = null
 
 function loadArticle() {
 	if (window.location.hash) {
@@ -28,12 +34,16 @@ function loadArticle() {
 
 function getBody() {
 	if (feedbackFilter === -1) {
-		return articles[index].body.map(text => `<p>${text}</p>`).join('')
+		return articles[index].body.map((paragraph, paragraphIndex) => {
+			return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
+				return `<span class="selectable" data-id="${paragraphIndex}-${sentenceIndex}" onclick="onSentenceSelect(event)">${sentence.trim()}</span>`
+			}).join('. ')}</p>`
+		}).join('')
 	}
 	else {
 		return articles[index].body.map((paragraph, paragraphIndex) => {
 			return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
-				return `<span class="highlight-${feedbackFilter}-${articles[index].highlights[paragraphIndex][feedbackFilter][sentenceIndex]}">${sentence.trim()}</span>`
+				return `<span data-id="${paragraphIndex}-${sentenceIndex}" class="highlight-${feedbackFilter}-${articles[index].highlights[paragraphIndex][feedbackFilter][sentenceIndex]}">${sentence.trim()}</span>`
 			}).join('. ')}</p>`
 		}).join('')
 	}
@@ -53,6 +63,40 @@ function setFeedback(filter) {
 	}
 
 	articleBodyElement.innerHTML = getBody()
+}
+
+function leaveFeedback(filter) {
+	leaveFeedbackId = ''
+	leaveFeedbackSpanElement.classList = `selectable highlight-${filter}-4`
+	leaveFeedbackElement.classList.remove('active')
+}
+
+function onSentenceSelect(event) {
+	const span = event.currentTarget
+	const id = span.getAttribute('data-id')
+	if (id === leaveFeedbackId) {
+		span.classList.remove('active')
+		leaveFeedbackElement.classList.remove('active')
+
+		leaveFeedbackId = ''
+		leaveFeedbackSpanElement = null
+	}
+	else {
+		if (leaveFeedbackId) {
+			leaveFeedbackSpanElement.classList.remove('active')
+		}
+
+		span.classList.add('active')
+		leaveFeedbackElement.classList.add('active')
+
+		const x = (span.offsetLeft + span.offsetWidth) / 2
+		const y = span.offsetTop
+		leaveFeedbackElement.style.top = `${y}px`
+		leaveFeedbackElement.style.left = `${x}px`
+
+		leaveFeedbackId = id
+		leaveFeedbackSpanElement = span
+	}
 }
 
 loadArticle()
