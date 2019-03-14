@@ -1,6 +1,7 @@
 const articleHeaderElement = document.querySelector('#container .header')
 const articleBodyElement = document.querySelector('#container .body')
 const leaveFeedbackElement = document.querySelector('#container .leave-feedback')
+const sideBarElement = document.querySelector('#sidebar')
 
 for (let i = 0; i < 4; i++) {
 	const feedbackButton = document.querySelector(`#feedback .feedback-${i}`)
@@ -30,22 +31,37 @@ function loadArticle() {
 		<div class="picture" style="background-image: url('${article.image}')"></div>
 	`
 	articleBodyElement.innerHTML = getBody()
+	sideBarElement.innerHTML = getOtherSources()
 }
 
 function getBody() {
-	if (feedbackFilter === -1) {
-		return articles[index].body.map((paragraph, paragraphIndex) => {
-			return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
-				return `<span class="selectable" data-id="${paragraphIndex}-${sentenceIndex}" onclick="onSentenceSelect(event)">${sentence.trim()}</span>`
-			}).join('. ')}</p>`
-		}).join('')
+	if (articles[index].video) {
+		return '<div class="embed"><h3>Video</h3><iframe width="560" height="315" src="' + articles[index].video + '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>'
 	}
 	else {
-		return articles[index].body.map((paragraph, paragraphIndex) => {
-			return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
-				return `<span data-id="${paragraphIndex}-${sentenceIndex}" class="highlight-${feedbackFilter}-${articles[index].highlights[paragraphIndex][feedbackFilter][sentenceIndex]}">${sentence.trim()}</span>`
-			}).join('. ')}</p>`
-		}).join('')
+		if (feedbackFilter === -1) {
+			return articles[index].body.map((paragraph, paragraphIndex) => {
+				return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
+					return `<span class="selectable" data-id="${paragraphIndex}-${sentenceIndex}" onclick="onSentenceSelect(event)">${sentence.trim()}</span>`
+				}).join('. ')}</p>`
+			}).join('')
+		}
+		else {
+			return articles[index].body.map((paragraph, paragraphIndex) => {
+				return `<p>${paragraph.split('. ').map((sentence, sentenceIndex) => {
+					return `<span data-id="${paragraphIndex}-${sentenceIndex}" class="highlight-${feedbackFilter}-${articles[index].highlights[paragraphIndex][feedbackFilter][sentenceIndex]}">${sentence.trim()}</span>`
+				}).join('. ')}</p>`
+			}).join('')
+		}
+	}
+}
+
+function getOtherSources() {
+	if (articles[index].otherSources) {
+		return `<h2>Other sources</h2><div class="sources">${articles[index].otherSources.map((source) => `<div class="source"><div class="image" style="background-image: url(\'${source.image}\')"></div><h3 class="headline">${source.headline}</h3></div>`).join('')}</div>`
+	}
+	else {
+		return ''
 	}
 }
 

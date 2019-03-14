@@ -1,0 +1,56 @@
+
+section#sign-up {
+	width: 35em;
+	max-width: calc(100% - 3em);
+	margin: 6.25em auto;
+}
+
+h1 {
+	margin: 0.375em 0;
+	font-size: 2.5em;
+}
+
+div.split-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+
+div.split-container > div {
+	flex: 1;
+}
+
+div.container {
+	padding: 0.5em;
+	padding-bottom: 1em;
+}
+
+h4 {
+	margin: 0.125em 0;
+	font-size: 1.25em;
+	font-weight: 400;
+}
+
+input, select {
+	display: block;
+	width: 100%;
+	padding: 0.375em 0.75em;
+	border: none;
+	border-bottom: 1px solid #c8d6e5;
+	outline: none;
+	font: inherit;
+	font-size: 1.125em;
+	box-sizing: border-box;
+}
+
+button {
+	color: #fff;
+	padding: 0.375em 0.75em;
+	background-color: #2e86de;
+	border: none;
+	outline: none;
+	font: inherit;
+	font-size: 1.5em;
+	font-weight: 300;
+	cursor: pointer;
+}
