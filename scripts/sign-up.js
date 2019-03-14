@@ -4,5 +4,5 @@ button.addEventListener('click', onSignUp)
 
 function onSignUp() {
 	localStorage.setItem('signedIn', 'true')
-	window.location.href = '/'
+	window.location.href = 'index.html'
 }

@@ -4,5 +4,5 @@ signOutButton.addEventListener('click', onSignOut)
 
 function onSignOut() {
 	localStorage.removeItem('signedIn')
-	window.location.href = '/'
+	window.location.href = 'index.html'
 }
