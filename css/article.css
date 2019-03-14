@@ -99,6 +99,14 @@
 	background-size: cover;
 }
 
+#container>div:first-child div.embed {
+	margin: 1em 0;
+}
+
+#container>div:first-child div.embed h3 {
+	font-size: 1.5em;
+}
+
 #container>div:first-child p {
 	font-size: 1.25em;
 	line-height: 1.75em;
@@ -257,6 +265,38 @@
 }
 
 #sidebar {
-	width: 20em;
+	width: 17em;
+	padding: 0.5em 1.5em;
 	border-left: 1px solid #c8d6e5;
+}
+
+#sidebar .source {
+	height: 17.5em;
+	margin-bottom: 1em;
+	background-color: #222;
+	border-radius: 3px;
+	opacity: 0.9;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+#sidebar .source:hover {
+	opacity: 1;
+}
+
+#sidebar .source .image {
+	width: 100%;
+	height: calc(100% - 6em);
+	background-position: center;
+	background-size: cover;
+}
+
+#sidebar .source .headline {
+	color: #eee;
+	min-height: 4.75em;
+	padding: 0.25em 0.75em;
+	margin: 0;
+	font-size: 1.125em;
+	font-weight: 300;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }

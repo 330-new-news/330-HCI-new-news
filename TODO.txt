@@ -1,0 +1,10 @@
+1. User registration page
+    - select preferences
+2. User page
+    - gamification
+3. Remove feedback option
+4. Persist feedback
+5. Alternate sources+suggested news
+6. Bug fixes
+    - video page
+7. Intersecting feedback
